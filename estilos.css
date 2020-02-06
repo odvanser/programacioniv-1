@@ -1,10 +1,13 @@
 body{
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
 }
-
-
-input[type=text]{
+h1{
+    background-color: blue;
+    margin: 0px;
+}
+input{
     height: 24px;
     border: 1px solid rgb(143, 167, 12);
     border-radius: 5px;
@@ -26,12 +29,16 @@ background-color: #ffffff;
 }
 input[type=text]:invalid,
 input[type=date]:invalid,
-input[type=file]:invalid{
+input[type=file]:invalid,
+input[type=url]:invalid,
+input[type=tel]:invalid{
     background-color: rgb(208, 101, 235);
 }
 input[type=text]:valid,
 input[type=date]:valid,
-input[type=file]:valid{
+input[type=file]:valid,
+input[type=url]:valid,
+input[type=tel]:valid{
     background-color: rgb(112, 211, 236);
     color: black;
 }
