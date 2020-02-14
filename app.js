@@ -43,20 +43,6 @@ document.addEventListener("DOMContentLoaded", (event) =>{
 });
 
 
-function guardarDatos() {
-    localStorage.txtCodigoAlumno = document.getElementById("txtCodigoAlumno").value;
-    localStorage.txtNombreAlumno = document.getElementById("txtNombreAlumno").value;
-}
-
-function RecuperarAlumno(){
-    if ((localStorage.txtCodigoAlumno != undefined) && (localStorage.txtNombreAlumno != undefined)) {
-     document.getElementById("datos").innerHTML = "nombre: " + localStorage.txtCodigoAlumno + "<br/> codigo: " + localStorage.txtNombreAlumno;
-    }
-    else{
-     document.getElementById("datos").innerHTML = "No has introducido tu codigo y tu nombre";
-    }
-}
-
 
 
 /*document.addEventListener("DOMContentLoaded",function(e){

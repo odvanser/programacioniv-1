@@ -1,12 +1,15 @@
 body{
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 10px;
+    margin: 0;/*Letras*/
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 h1{
-    background-color: blue;
-    margin: 0px;
+    background-image: linear-gradient(to bottom right, #1ab6b6, #4cac6e);
+    padding: 25px;
+    
 }
+
 input{
     height: 24px;
     border: 1px solid rgb(143, 167, 12);
@@ -20,6 +23,8 @@ input[type=file]{
     text-transform: uppercase;
     font-weight: bolder;
     height: 32px;
+    cursor: pointer;
+    position: relative;
 }
 input[type=submit]:hover,
 input[type=button]:hover,
@@ -27,13 +32,7 @@ input[type=file]:hover{
 color: rgb(143, 167, 12);
 background-color: #ffffff;
 }
-input[type=text]:invalid,
-input[type=date]:invalid,
-input[type=file]:invalid,
-input[type=url]:invalid,
-input[type=tel]:invalid{
-    background-color: rgb(208, 101, 235);
-}
+
 input[type=text]:valid,
 input[type=date]:valid,
 input[type=file]:valid,
@@ -41,4 +40,11 @@ input[type=url]:valid,
 input[type=tel]:valid{
     background-color: rgb(112, 211, 236);
     color: black;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    cursor: pointer;
+}
+.container{/*Fonde desgradado*/
+    background-image: linear-gradient(to bottom right, #1ab6b6, #4cac6e);
+    padding: 28%;
+
 }
