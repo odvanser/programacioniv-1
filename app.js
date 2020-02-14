@@ -1,30 +1,66 @@
+document.addEventListener("DOMContentLoaded", (event) =>{
+    const formAlumnos = document.querySelector("#frmAlumnos");
+    formAlumnos.addEventListener("submit", (e)=>{
+        e.preventDefault(); 
+        let codigo = document.querySelector("#txtCodigoAlumno").value,
+            nombre = document.querySelector("#txtNombreAlumno").value,
+            direccion = document.querySelector("#txtDireccionAlumno").value,
+            telefono = document.querySelector("#txtTelefonoAlumno").value;
 
-document.addEventListener("DOMContentLoaded", e=>{
-    document.querySelector("#frmAlumnos").addEventListener("submit",event=>{
-        event.preventDefault();
+            var keycodigo="codigo"+" "+codigo;
+            var keynombre="nombre"+" "+codigo;
+            var keydireccion="direccion"+" "+codigo;
+            var keytelefono="telefono"+" "+codigo;
 
-        let codigo = document.querySelector("#textCodigoAlumno").value,
-        nombre = document.querySelector("#textNombreAlumno").value,
-        direccion = document.querySelector("#textDireccionAlumnos").value,
-        telefono = document.querySelector("#textTelefonoAlumno").value,
-        if('localStorege' in Window){
-            window.localStorage.setItem("codigo",codigo);
-            window.localStorage.setItem("nombre",nombre);
-            window.localStorage.setItem("direccion",direccion);
-            window.localStorage.setItem("telefono",telefono);
-        }else{
-            alert("Por favor actualizate")
+
+        if( 'localStorage' in window ){
+            window.localStorage.setItem(keycodigo, codigo);
+            window.localStorage.setItem(keynombre, nombre);
+            window.localStorage.setItem(keydireccion, direccion);
+            window.localStorage.setItem(keytelefono, telefono);
+            
+
+        } else {
+            alert("almacenamiento en local NO soportado!!! Actualizate!");
         }
-
-    } );
-    document.querySelector("#btnRecuperarAlumno").addEventListener("click", event=>{
-        document.querySelector("#txtCodigoAlumno")
-    })
+        console.log(codigo,nombre,direccion,telefono);
+        
+    });
+    document.querySelector("#btnRecuperarAlumno").addEventListener("click",(e)=>{
+        if( 'localStorage' in window ){
+            document.querySelector("#txtCodigoAlumno").value = 
+                window.localStorage.getItem("codigo");
+            document.querySelector("#txtNombreAlumno").value = 
+                window.localStorage.getItem("nombre");
+            document.querySelector("#txtDireccionAlumno").value = 
+                window.localStorage.getItem("direccion");
+            document.querySelector("#txtTelefonoAlumno").value = 
+                window.localStorage.getItem("telefono");
+        }  else {
+            alert("almacenamiento en local NO soportado!!! Actualizate!");
+        }
+    });
 });
 
 
+function guardarDatos() {
+    localStorage.txtCodigoAlumno = document.getElementById("txtCodigoAlumno").value;
+    localStorage.txtNombreAlumno = document.getElementById("txtNombreAlumno").value;
+}
+
+function RecuperarAlumno(){
+    if ((localStorage.txtCodigoAlumno != undefined) && (localStorage.txtNombreAlumno != undefined)) {
+     document.getElementById("datos").innerHTML = "nombre: " + localStorage.txtCodigoAlumno + "<br/> codigo: " + localStorage.txtNombreAlumno;
+    }
+    else{
+     document.getElementById("datos").innerHTML = "No has introducido tu codigo y tu nombre";
+    }
+}
+
+
+
 /*document.addEventListener("DOMContentLoaded",function(e){
-    alert("CALLBACK LISTO");
+    alert("Tarea Freddy Castro");
 });
 
 
