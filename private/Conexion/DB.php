@@ -12,7 +12,7 @@ class Conexion{
         $this->result = mysqli_query($this->conexion,$sql) or die(mysqli_error($this->conexion));
     }
     public function obtener_datos(){
-        return $this->result->fetch_all(MYSQLI_ASSOC);
+        return $this->result->fetch_all(MyISAM);
     }
     public function respuesta(){
         return $this->result;
