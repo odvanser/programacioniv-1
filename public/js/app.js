@@ -1,4 +1,3 @@
-
 var $ = el => document.querySelector(el);
 document.addEventListener("DOMContentLoaded",event=>{
     let mostrarVista = $("[class*='mostrar']");
@@ -8,7 +7,7 @@ document.addEventListener("DOMContentLoaded",event=>{
         let modulo = e.srcElement.dataset.modulo;
         
         fetch('public/vistas/alumnos/alumnos.html').then( resp=>resp.text() ).then(resp=>{
-            $(`#vistas-${modulo}`).innerHTML = resp;
+            $(`#vistas-${modulo}`).innerHTML = resp; 
             
             let btnCerrar = $(".close");
             btnCerrar.addEventListener("click",event=>{

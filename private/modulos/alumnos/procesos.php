@@ -1,6 +1,6 @@
 <?php 
 include('../../Config/Config.php');
-$alumno = new alumno($conexion);
+$alumno = new alumnos($conexion);
 
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
@@ -9,7 +9,7 @@ if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 $alumno->$proceso( $_GET['alumno'] );
 print_r(json_encode($alumno->respuesta));
 
-class alumno{
+class alumnos{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
     
