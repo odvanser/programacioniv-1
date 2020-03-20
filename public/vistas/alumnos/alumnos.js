@@ -4,7 +4,7 @@ frmAlumnos.addEventListener("submit",e=>{
     e.preventDefault();
     e.stopPropagation();
     
-    let alumnos = {
+    let alumno = {
         accion    : 'nuevo',
         codigo    : $("#txtCodigoAlumno").value,
         nombre    : $("#txtNombreAlumno").value,
@@ -12,7 +12,7 @@ frmAlumnos.addEventListener("submit",e=>{
         telefono  : $("#txtTelefonoAlumno").value
     };
     fetch(`private/modulos/alumnos/procesos.php?proceso=recibirDatos&alumno=
-    ${JSON.stringify(alumnos)}`).
+    ${JSON.stringify(alumno)}`).
     then( resp=>resp.json() ).then(resp=>{//error aca sale
         $("#respuestaAlumno").innerHTML = `
             <div class="alert alert-success" role="alert">
