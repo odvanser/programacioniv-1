@@ -1,23 +1,34 @@
 var $ = el => document.querySelector(el);
 document.addEventListener("DOMContentLoaded",event=>{
-    let mostrarVista = $("[class*='mostrar']");
-    mostrarVista.addEventListener('click',e=>{
+    let alumnos = document.getElementById("idalumnos");
+    let docentes = document.getElementById("iddocentes");
+    docentes.addEventListener("click",e=>{
         e.stopPropagation();
-
-        let modulo = e.srcElement.dataset.modulo;
-        
-        fetch('public/vistas/alumnos/alumnos.html').then( resp=>resp.text() ).then(resp=>{
-            $(`#vistas-${modulo}`).innerHTML = resp; 
-            
-            let btnCerrar = $(".close");
-            btnCerrar.addEventListener("click",event=>{
-                $(`#vistas-${modulo}`).innerHTML = "";
-            });
-
-            let cuerpo = $("body"),
-                script = document.createElement("script");
-            script.src = `public/vistas/${modulo}/${modulo}.js`;
-            cuerpo.appendChild(script);
-        });
+        let vistas="docentes";
+        colocarVista(vistas);
+    });
+    alumnos.addEventListener("click", e=>{
+        e.stopPropagation();
+        let vistas="alumnos"
+        colocarVista(vistas);
     });
 });
+function colocarVista(vistas) {
+
+    fetch(`public/vistas/${vistas}/${vistas}.html`).then(resp => resp.text()).then(resp => {
+
+        document.getElementById(`vistas-${vistas}`).innerHTML = resp;
+        let btnCerrar = $(".close");
+
+        btnCerrar.addEventListener("click", event => {
+            $(`#vistas-${vistas}`).innerHTML = "";
+        });
+
+        let cuerpo = $("body"),
+            script = document.createElement("script");
+        script.src = `public/vistas/${vistas}/${vistas}.js`;
+        cuerpo.appendChild(script);
+
+    });
+
+}
