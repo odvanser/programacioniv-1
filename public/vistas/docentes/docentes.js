@@ -1,3 +1,4 @@
+export function modulo() {
 var $ = el => document.querySelector(el),
     frmDocentes = $("#frmDocentes");
 frmDocentes.addEventListener("submit", e => {
@@ -13,7 +14,7 @@ frmDocentes.addEventListener("submit", e => {
     };
     fetch(`private/modulos/docentes/procesos.php?proceso=recibirDatos&docentes=
     ${JSON.stringify(docentes)}`).
-    then(resp => resp.json()).then(resp => { //error aca sale
+    then(resp => resp.json()).then(resp=>{ //error aca sale
         $("#respuesta").innerHTML = `
             <div class="alert alert-success" role="alert">
                 ${resp.msg}
@@ -21,3 +22,4 @@ frmDocentes.addEventListener("submit", e => {
         `;
     });
 });
+}

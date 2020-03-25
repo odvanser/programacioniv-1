@@ -22,13 +22,13 @@ class docentes{
     }
     private function validar_datos(){
         if( empty($this->datos['codigo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el codigo del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese el codigo del docente';
         }
         if( empty($this->datos['nombre']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el nombre del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese el nombre del docente';
         }
         if( empty($this->datos['direccion']) ){
-            $this->respuesta['msg'] = 'por favor ingrese la direccion del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese la direccion del docente';
         }
         $this->almacenar_docentes();
     }

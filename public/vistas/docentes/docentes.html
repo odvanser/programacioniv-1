@@ -3,7 +3,7 @@
         <div class="card-header">
             MANTENIMIENTO DE DOCENTES
 
-            <button type="button" class="close" aria-label="Close">
+            <button type="button" id="btn-close-docentes" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
@@ -31,7 +31,7 @@
             <div class="row row-cols-1 p-2">
                 <div class="row-col">
                     <div class="col">
-                        DIRECCION:
+                        Dui:
                     </div>
                     <div class="col">
                         <input type="text" required id="txtDireccion" placeholder="XXXX000000"
@@ -55,6 +55,8 @@
                         <input id="btnGuardar" type="submit" class="btn btn-outline-primary text-white"
                             value="Guardar">
                         <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
+                         <input type="button" class="btn btn-outline-success mostrar-buscar-alumnos text-white"
+                             data-modulo="alumnos" data-form="buscar-alumnos" value="Buscar">
                     </div>
                 </div>
             </div>
