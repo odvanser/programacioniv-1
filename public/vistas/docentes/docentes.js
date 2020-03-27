@@ -8,15 +8,13 @@ export function modulo() {
         let docentes = {
             accion: frmDocentes.dataset.accion,
             idDocente: frmDocentes.dataset.iddocente,
-            codigo: $("#txtCodigo").value,
-            nombre: $("#txtNombre").value,
-            direccion: $("#txtDireccion").value,
-            telefono: $("#txtTelefono").value
+            codigo: $("#txtCodigoDocente").value,
+            nombre: $("#txtNombreDocente").value,
+            direccion: $("#txtDireccionDocente").value,
+            telefono: $("#txtTelefonoDocente").value
         };
-        fetch(`private/modulos/docentes/procesos.php?proceso=recibirDatos&docentes=
-        ${JSON.stringify(docentes)}`).
-        then(resp => resp.json()).then(resp=>{ //error aca sale
-            $("#respuesta").innerHTML = `
+        fetch(`private/modulos/docentes/procesos.php?proceso=recibirDatos&docente=${JSON.stringify(docentes)}`).then(resp => resp.json()).then(resp => {
+            $("#respuestaDocente").innerHTML = `
                 <div class="alert alert-success" role="alert">
                     ${resp.msg}
                 </div>
