@@ -36,7 +36,12 @@ export function modulo() {
             $("#tbl-buscar-docentes > tbody").innerHTML = filas;
             $("#tbl-buscar-docentes > tbody").addEventListener("click", e => {
                 if (e.srcElement.parentNode.dataset.docente == null) {
+
+                    let confirmacion = confirm(`¿Seguro que quiere eliminar el registro?`)
+
+                    if(confirmacion == true){
                     eliminarDocente(e.srcElement.parentNode.parentNode.dataset.iddocente);
+                    }
                 } else {
                     modificarDocente(JSON.parse(e.srcElement.parentNode.dataset.docente));
                 }

@@ -36,7 +36,13 @@ export function modulo(){
             $("#tbl-buscar-alumnos > tbody").innerHTML = filas;
             $("#tbl-buscar-alumnos > tbody").addEventListener("click",e=>{
                 if( e.srcElement.parentNode.dataset.alumno==null ){
+
+                    let confirmacion = confirm(`¿Seguro que quiere eliminar el registro?`)
+
+                    if (confirmacion == true) {
+
                     eliminarAlumno( e.srcElement.parentNode.parentNode.dataset.idalumno );
+                    }
                 } else {
                     modificarAlumno( JSON.parse(e.srcElement.parentNode.dataset.alumno) );
                 }
