@@ -7,7 +7,7 @@ var appBuscarDocente = new Vue({
     },
     methods: {
         buscarDocente: function () {
-            fetch(`private/modulos/docente/procesos.php?proceso=buscarDocente&docente=${this.valor}`).then(resp => resp.json()).then(resp => {
+            fetch(`private/modulos/docentes/procesos.php?proceso=buscarDocente&docente=${this.valor}`).then(resp => resp.json()).then(resp => {
                 this.misdocentes = resp;
             });
         },
