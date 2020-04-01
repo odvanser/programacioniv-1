@@ -24,7 +24,16 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    <tr v-for="maestro in misdocentes" :key="maestro.idDocente" v-on:click="modificarDocente(maestro)">
+                        <td>{{ maestro.codigo }}</td>
+                        <td>{{ maestro.nombre }}</td>
+                        <td>{{ maestro.direccion }}</td>
+                        <td>{{ maestro.telefono }}</td>
+                        <td>
+                            <input v-on:click="eliminarDocente(maestro.idDocente)" type="button"
+                                class="btn btn-outline-danger text-white" value="del">
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

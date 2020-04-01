@@ -7,7 +7,7 @@ var appBuscarAlumnos = new Vue({
     },
     methods: {
         buscarAlumno: function () {
-            fetch(`private/Modulos/alumnos/procesos.php?proceso=buscarAlumno&alumno=${this.valor}`).then(resp => resp.json()).then(resp => {
+            fetch(`private/modulos/alumnos/procesos.php?proceso=buscarAlumno&alumno=${this.valor}`).then(resp => resp.json()).then(resp => {
                 this.misalumnos = resp;
             });
         },
@@ -16,7 +16,7 @@ var appBuscarAlumnos = new Vue({
             appalumno.alumno.accion = 'modificar';
         },
         eliminarAlumno: function (idAlumno) {
-            fetch(`private/Modulos/alumnos/procesos.php?proceso=eliminarAlumno&alumno=${idAlumno}`).then(resp => resp.json()).then(resp => {
+            fetch(`private/modulos/alumnos/procesos.php?proceso=eliminarAlumno&alumno=${idAlumno}`).then(resp => resp.json()).then(resp => {
                 this.buscarAlumno();
             });
         
