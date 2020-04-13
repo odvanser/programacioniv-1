@@ -1,7 +1,7 @@
 <?php session_start();
 
     if(isset($_SESSION['usuario'])) {
-        header('location: index.php');
+        header('location: private/backend/index.php');
     }
 
     $error = '';
@@ -13,7 +13,7 @@
         $clave = hash('sha512', $clave);
         
         try{
-            $conexion = new PDO('mysql:host=localhost;dbname=login_tuto', 'root', '');
+            $conexion = new PDO('mysql:host=localhost;dbname=db_nutricion', 'root', '');
             }catch(PDOException $prueba_error){
                 echo "Error: " . $prueba_error->getMessage();
             }
@@ -31,13 +31,13 @@
         
         if ($resultado !== false){
             $_SESSION['usuario'] = $usuario;
-            header('location: principal.php');
+            header('location: private/backend/principal.php');
         }else{
             $error .= '<i>Este usuario no existe</i>';
         }
     }
     
-require 'frontend/login-vista.php';
+require 'public/frontend/login-vista.php';
 
 
 ?>
