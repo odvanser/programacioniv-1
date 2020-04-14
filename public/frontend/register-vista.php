@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login / Registar Nutricion</title>
+    <title>Login / Registar Nutrición</title>
     
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     
     
-    <link rel="stylesheet" href="public/icon/style.css">
-    <link rel="stylesheet" href="public/css/style.css">
+    
+    <link rel="stylesheet" href="../../public/css/style.css">
     
 </head>
 <body>
@@ -16,12 +16,12 @@
 <div class="container-form">
         <div class="header">
             <div class="logo-title">
-                <img src="public/Nutricion-master/img/logo.png" alt="">
+                <img src="../../public/Nutricion-master/img/logo.png" alt="">
                 <h2>Nutrición</h2>
             </div>
             <div class="menu">
-                <a href="private/backend/login.php"><li class="module-login">Login</li></a>
-                <a href="private/backend/register.php"><li class="module-register active">Register</li></a>
+                <a href="../modulos/login.php"><li class="module-login">Login</li></a>
+                <a href="../modulos/register.php"><li class="module-register active">Register</li></a>
             </div>
         </div>
         
@@ -57,7 +57,7 @@
     </div>
 
     
-    <script src="public/js/jquery.js"></script>
-    <script src="public/js/script.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

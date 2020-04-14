@@ -1,7 +1,7 @@
 <?php session_start();
 
     if(isset($_SESSION['usuario'])) {
-        header('location: private/backend/index.php');
+        header('location: ../../../../index.php');
     }
 
     
@@ -23,7 +23,7 @@
             $error .= '<i>Favor de rellenar todos los campos</i>';
         }else{
             try{
-                $conexion = new PDO('mysql:host=localhost;dbname=login_tuto', 'root', '');
+                $conexion = new PDO('mysql:host=localhost;dbname=proyec_nutricion', 'root', '');
             }catch(PDOException $prueba_error){
                 echo "Error: " . $prueba_error->getMessage();
             }
@@ -59,6 +59,6 @@
     }
 
 
-    require 'frontend/register-vista.php';
+    require '../../public/frontend/register-vista.php';
 
 ?>

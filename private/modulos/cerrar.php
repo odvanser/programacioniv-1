@@ -2,7 +2,7 @@
 
     session_destroy();
     $_SESSION = array();
-    
-    header('location: private/backend/index.php');
+
+    header('location: ../../index.php');
 
 ?>
