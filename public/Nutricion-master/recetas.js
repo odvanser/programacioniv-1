@@ -25,4 +25,4 @@ var apprecetas = new Vue({
             });
         }
     }
-});
+}).draggable();
