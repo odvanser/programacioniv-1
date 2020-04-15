@@ -12,6 +12,9 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+.modulos {
+    position: absolute;
+}
 
 h1,
 h2,
