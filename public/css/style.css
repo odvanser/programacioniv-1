@@ -6,7 +6,7 @@
     text-decoration: none;
 }
 
-body {
+body{
     background-image: url(../image/bg4.jpg);
     background-position: center;
     background-attachment: fixed;
@@ -117,7 +117,7 @@ a {
     position: relative;
 }
 
-.border-input{
+.border-input {
     border-bottom: 1px solid #1FDE82;
 }
 

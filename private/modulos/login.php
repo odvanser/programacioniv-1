@@ -31,7 +31,7 @@
         
         if ($resultado !== false){
             $_SESSION['usuario'] = $usuario;
-            header('location: principal.php');
+            header('location: principal/principal.php');
         }else{
             $error .= '<i>Este usuario no existe</i>';
         }
